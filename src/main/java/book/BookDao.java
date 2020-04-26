@@ -2,12 +2,11 @@ package book;
 
 import book.model.Book;
 import jpa.GenericJpaDao;
-import user.model.User;
 
 import javax.persistence.NoResultException;
 import java.util.Optional;
 
-public class BookDao extends GenericJpaDao<User> {
+public class BookDao extends GenericJpaDao<Book> {
 
     public Optional<Book> findByIsbn13(String isbn13) {
         try{

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BookGenerator {
     private static Faker faker = new Faker(new Locale("en"));
 
-    private static Book createBook() {
+    static Book createBook() {
         Date date = faker.date().past(100000, TimeUnit.DAYS);
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
@@ -24,7 +24,7 @@ public class BookGenerator {
                 .publisher(faker.book().publisher())
                 .publicationDate(localDate)
                 .pages(faker.number().numberBetween(10,1000))
-                .avaible(faker.bool().bool())
+                .available(faker.bool().bool())
                 .build();
 
         return book;
